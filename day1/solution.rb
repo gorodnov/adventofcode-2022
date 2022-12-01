@@ -1,23 +1,22 @@
-require './core'
+# frozen_string_literal: true
 
 module AdventOfCode
-  def self.solve1
-    read_file("#{__dir__}/in.txt")
-      .map(&:to_i)
-      .chunk_and_map { |i| i > 0 }
-      .map(&:sum)
-      .max
-  end
+  class Day1 < Day
+    def solution1
+      @input
+        .map(&:to_i)
+        .chunk_and_map { |i| i > 0 }
+        .map(&:sum)
+        .max
+    end
 
-  def self.solve2
-    read_file("#{__dir__}/in.txt")
-      .map(&:to_i)
-      .chunk_and_map { |i| i > 0 }
-      .map(&:sum)
-      .sort.last(3)
-      .sum
+    def solution2
+      @input
+        .map(&:to_i)
+        .chunk_and_map { |i| i > 0 }
+        .map(&:sum)
+        .sort.last(3)
+        .sum
+    end
   end
 end
-
-puts AdventOfCode.solve1.inspect
-puts AdventOfCode.solve2.inspect

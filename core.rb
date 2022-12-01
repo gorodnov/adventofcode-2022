@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Enumerable
   def chunk_and_map(&block)
     self.chunk(&block).select { |i| i[0] }.map { |i| i[1] }
