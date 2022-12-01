@@ -1,25 +1,21 @@
+require './core'
+
 module AdventOfCode
   def self.solve1
-    read_file('in.txt')
+    read_file("#{__dir__}/in.txt")
       .map(&:to_i)
-      .chunk { |i| i > 0 }.select { |i| i[0] }.map { |i| i[1] }
+      .chunk_and_map { |i| i > 0 }
       .map(&:sum)
       .max
   end
 
   def self.solve2
-    read_file('in.txt')
+    read_file("#{__dir__}/in.txt")
       .map(&:to_i)
-      .chunk { |i| i > 0 }.select { |i| i[0] }.map { |i| i[1] }
+      .chunk_and_map { |i| i > 0 }
       .map(&:sum)
       .sort.last(3)
       .sum
-  end
-
-  private
-
-  def self.read_file(name)
-    File.readlines([__dir__, name].join('/'), chomp: true)
   end
 end
 
