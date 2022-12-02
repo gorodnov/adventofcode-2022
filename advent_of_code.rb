@@ -13,4 +13,5 @@ module AdventOfCode
 end
 
 require './day1/solution'
+require './day2/solution'
 
