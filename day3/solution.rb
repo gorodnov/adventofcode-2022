@@ -6,9 +6,8 @@ module AdventOfCode
 
     def solution1
       @input
-        .map { |s| s.split('') }
-        .map { |a| [a[0, a.length/2], a[a.length/2..-1]] }
-        .map { |compartments| compartments[0] & compartments[1] }
+        .map { |s| s.split('').each_slice(s.length/2) }
+        .map { |a| a.reduce(&:&) }
         .flatten
         .map(&method(:priority))
         .sum
@@ -18,13 +17,14 @@ module AdventOfCode
       @input
         .map { |s| s.split('') }
         .each_slice(3)
-        .map { |a| a[0] & a[1] & a[2] }
+        .map { |a| a.reduce(&:&) }
         .flatten
         .map(&method(:priority))
         .sum
     end
 
     private
+
 
     def priority(item)
       ITEMS.index(item) + 1
