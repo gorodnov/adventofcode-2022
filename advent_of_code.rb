@@ -15,4 +15,5 @@ end
 require './day1/solution'
 require './day2/solution'
 require './day3/solution'
+require './day4/solution'
 
