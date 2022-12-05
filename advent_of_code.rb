@@ -4,6 +4,7 @@ require './core'
 
 module AdventOfCode
   class Day
+    # @param [Array<String>] input
     def initialize(input)
       @input = input
     end
@@ -16,4 +17,5 @@ require './day1/solution'
 require './day2/solution'
 require './day3/solution'
 require './day4/solution'
+require './day5/solution'
 
