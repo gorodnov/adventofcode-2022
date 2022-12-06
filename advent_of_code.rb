@@ -4,9 +4,12 @@ require './core'
 
 module AdventOfCode
   class Day
+    attr_reader :input
+
     def initialize(input)
       @input = input
     end
+
     def solution1; end
     def solution2; end
   end

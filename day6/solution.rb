@@ -3,11 +3,11 @@
 module AdventOfCode
   class Day6 < Day
     def solution1
-      traverse(@input[0].chars, 0, 4)
+      traverse(input[0].chars, 0, 4)
     end
 
     def solution2
-      traverse(@input[0].chars, 0, 14)
+      traverse(input[0].chars, 0, 14)
     end
 
     private

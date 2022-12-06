@@ -3,7 +3,7 @@
 module AdventOfCode
   class Day1 < Day
     def solution1
-      @input
+      input
         .map(&:to_i)
         .chunk_and_map { |i| i > 0 }
         .map(&:sum)
@@ -11,7 +11,7 @@ module AdventOfCode
     end
 
     def solution2
-      @input
+      input
         .map(&:to_i)
         .chunk_and_map { |i| i > 0 }
         .map(&:sum)

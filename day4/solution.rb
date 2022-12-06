@@ -3,7 +3,7 @@
 module AdventOfCode
   class Day4 < Day
     def solution1
-      @input
+      input
         .map { |s| s.split(',').map { |ss| ss.split('-').map(&:to_i) }.map { |a| (a[0]..a[1]).to_a } }
         .select { |a|
           overlap = (a[0] & a[1]).length
@@ -13,7 +13,7 @@ module AdventOfCode
     end
 
     def solution2
-      @input
+      input
         .map { |s| s.split(',').map { |ss| ss.split('-').map(&:to_i) }.map { |a| (a[0]..a[1]).to_a } }
         .select { |a| (a[0] & a[1]).length > 0 }
         .length

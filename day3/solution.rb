@@ -5,7 +5,7 @@ module AdventOfCode
     ITEMS = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
     def solution1
-      @input
+      input
         .map { |s| s.split('').each_slice(s.length/2) }
         .map { |a| a.reduce(&:&) }
         .flatten
@@ -14,7 +14,7 @@ module AdventOfCode
     end
 
     def solution2
-      @input
+      input
         .map { |s| s.split('') }
         .each_slice(3)
         .map { |a| a.reduce(&:&) }

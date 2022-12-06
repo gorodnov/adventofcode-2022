@@ -25,15 +25,15 @@ module AdventOfCode
     end
 
     def separator
-      @separator ||= @input.find_index(&:empty?)
+      @separator ||= input.find_index(&:empty?)
     end
 
     def stacks_count
-      @stacks_count ||= @input[separator - 1].split(/\s+/).map(&:to_i).max
+      @stacks_count ||= input[separator - 1].split(/\s+/).map(&:to_i).max
     end
 
     def crates
-      @crates ||= @input[0..separator - 2].map do |s|
+      @crates ||= input[0..separator - 2].map do |s|
         arr = s.chars.each_slice(4).map(&:join).map(&:strip)
         arr + Array.new(stacks_count - arr.length, "")
       end.transpose.map { |a| a.delete_if(&:empty?) }
@@ -41,7 +41,7 @@ module AdventOfCode
 
     def instructions
       @instructions ||=
-        @input[separator + 1..-1]
+        input[separator + 1..-1]
           .map(&:split)
           .map { |i| Hash[i.each_slice(2).map { |a| [a[0].to_sym, a[1].to_i] }] }
     end

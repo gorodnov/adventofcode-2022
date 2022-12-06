@@ -27,7 +27,7 @@ module AdventOfCode
     }.freeze
 
     def solution1
-      @input
+      input
         .map { |s| s.split(' ') }
         .map { |pair|
           [CONVERSION[pair[0]], { 'X' => ROCK, 'Y' => PAPER, 'Z' => SCISSORS }.freeze[pair[1]]]
@@ -37,7 +37,7 @@ module AdventOfCode
     end
 
     def solution2
-      @input
+      input
         .map { |s| s.split(' ') }
         .map { |pair|
           v = CONVERSION[pair[0]]
