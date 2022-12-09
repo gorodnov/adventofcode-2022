@@ -23,4 +23,5 @@ require './day5/solution'
 require './day6/solution'
 require './day7/solution'
 require './day8/solution'
+require './day9/solution'
 

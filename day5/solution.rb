@@ -29,7 +29,7 @@ module AdventOfCode
     end
 
     def stacks_count
-      @stacks_count ||= input[separator - 1].split(/\s+/).map(&:to_i).max
+      @stacks_count ||= input[separator - 1].split.map(&:to_i).max
     end
 
     def crates
